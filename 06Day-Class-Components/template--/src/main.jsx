@@ -36,10 +36,17 @@ class BainTain extends Component {
     super(props);
   }
 
+  state = {
+    count: 0,
+  }
   render() {
+
+    const count = this.state.count
     return (
       <div>
-        <div>This is the main folder</div>
+        <div>This is the main {count}</div>
+        <button onClick={()=> this.setState({count:this.state.count+1})}>Add One</button>
+        <button onClick={()=> this.setState({count:this.state.count-1})}>Minus one</button>
         <Header />
         <TechList />
       </div>
